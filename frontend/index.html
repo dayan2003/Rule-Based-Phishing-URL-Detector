@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing URL Detector</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">DH's</div>
+            <h1>Suspicious URL Detector</h1>
+            <p>Rule-based URL analysis.</p>
+        </header>
+
+        <main>
+            <div class="search-box">
+                <input type="text" id="urlInput" placeholder="Enter URL to analyze (e.g., http://example.com)"
+                    autocomplete="off">
+                <button id="analyzeBtn">Analyze URL</button>
+            </div>
+
+            <div id="loading" class="hidden">Analyzing...</div>
+            <div id="error" class="hidden"></div>
+
+            <div id="results" class="hidden">
+                <div class="verdict-card" id="verdictCard">
+                    <h2>Analysis Verdict</h2>
+                    <div class="verdict-badge" id="verdictBadge">SAFE</div>
+                    <div class="score-container">
+                        <span>Risk Score: <strong id="riskScore">0</strong>/100</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="riskBar"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="details-grid">
+                    <div class="card rules-card">
+                        <h3>Triggered Rules</h3>
+                        <div id="rulesList">
+                            <p class="placeholder-text">No suspicious rules triggered.</p>
+                        </div>
+                    </div>
+
+                    <div class="card info-card">
+                        <h3>URL Components</h3>
+                        <ul id="urlComponents">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Powered by Python + Flask | Rule-Based Analysis Engine</p>
+        </footer>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
